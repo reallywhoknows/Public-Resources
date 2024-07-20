@@ -4,10 +4,10 @@ Just like with Microsoft Office macros, we can also craft malicious macros for L
 ## Creating the Macro
 We'll need to go to the following location in order to create our macro.
 `Tools -> Macros -> Organize Macros -> Basic`
-![alt text](./images/libre-office-macros1.png)
+![alt text](https://github.com/reallywhoknows/Public-Resources/blob/main/tips/Images/libre-office-macros1.png?raw=true)
 
 Next we'll select our document and choose "New", then give it a name.
-![alt text](./images/libre-office-macros2.png)
+![alt text](https://github.com/reallywhoknows/Public-Resources/blob/main/tips/Images/libre-office-macros2.png?raw=true)
 
 We are given a pretty basic code block to work with, but we can execute commands using the `Shell` function and passing through our command.
 ( More on the shell Function https://help.libreoffice.org/6.1/he/text/sbasic/shared/03130500.html )
@@ -27,12 +27,12 @@ cmd /c powershell
 ```
 
 The full content of my payload will be a base64 powershell reverse shell.
-![alt text](./images/libre-office-macros3.png)
+![alt text](https://github.com/reallywhoknows/Public-Resources/blob/main/tips/Images/libre-office-macros3.png?raw=true)
 
 ## Automated Execution
 Those of you who are familiar with creating macros on Windows Office products will likely notice there is nothing in the macro to automatically execute on open. This is in fact correct, in Libre Office there is an additional setting that can be changed.
 `Tools -> Customize -> Events`
-![alt text](./images/libre-office-macros4.png)
+![alt text](https://github.com/reallywhoknows/Public-Resources/blob/main/tips/Images/libre-office-macros4.png?raw=true)
 
 Once we have this applied, the document is opened and it'll automatically execute our payload. As with any type of phishing attack, we really want to verify that this is working beforehand.
 

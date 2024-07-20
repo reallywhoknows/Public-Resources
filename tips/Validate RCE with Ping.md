@@ -8,7 +8,7 @@ In this scenario, let's say you've found an exploit and are trying to get a reve
 
 In this case, there are two tools I typically use to validate RCE **Ping** and **Curl**. These are typically installed on linux or windows and can be used to validate our RCE let's look.
 
-![alt text](./images/rce-w-ping1.png)
+![alt text](https://github.com/reallywhoknows/Public-Resources/blob/main/tips/Images/rce-w-ping1.png?raw=true)
 
 It says it works but I don't know if it's true or not!
 
@@ -18,10 +18,10 @@ Let's start with **Ping**
 ```
 sudo tcpdump -n -i tun0 icmp
 ```
-![alt text](./images/rce-w-ping2.png)
+![alt text](https://github.com/reallywhoknows/Public-Resources/blob/main/tips/Images/rce-w-ping2.png?raw=true)
 
 Now let's go ahead and attempt our RCE with the payload `ping kali_ip`. As a special note, make sure if you're pinging on linux to limit the amount of pings using `-c4` or it'll never stop bothering you.
-![alt text](./images/rce-w-ping3.png)
+![alt text](https://github.com/reallywhoknows/Public-Resources/blob/main/tips/Images/rce-w-ping3.png?raw=true)
 
 Another method **curl**
 
@@ -29,9 +29,9 @@ Another method **curl**
 ```
 python3 -m http.server 80
 ```
-![alt text](./images/rce-w-ping4.png)
+![alt text](https://github.com/reallywhoknows/Public-Resources/blob/main/tips/Images/rce-w-ping4.png?raw=true)
 
 Now all we have to is edit our payload utilizing **curl** and see if our webserver gets an visitors. `curl http://kali_ip/`
-![alt text](./images/rce-w-ping5.png)
+![alt text](https://github.com/reallywhoknows/Public-Resources/blob/main/tips/Images/rce-w-ping5.png?raw=true)
 
 Perfect! Now with this, we know for sure code execution is happening, we just need to trouble shoot *why* our payload isn't executing as intended, whether it's a firewall, write permissions or binaries not being available.
